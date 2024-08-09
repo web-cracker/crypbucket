@@ -10,6 +10,7 @@ import Crypto from './pages/Crypto';
 import Trending from './pages/Trending';
 import Saved from './pages/Saved';
 import CryptoDetails from './components/CryptoDetails';
+import BitcoinTransfer from './pages/BitcoinTransfer';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             element: <CryptoDetails />
           }
         ]
+      },
+      {
+        path:"/p2p-transfer",
+        element: <BitcoinTransfer />,
       }
     ]
 

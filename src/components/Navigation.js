@@ -38,7 +38,7 @@ ${
     border-0 cursor-pointer rounded capitalize font-semibold`;
         }}
       >
-        trending
+        Trending
       </NavLink>
 
       <NavLink
@@ -55,6 +55,22 @@ ${
         }}
       >
         Exchange
+      </NavLink>
+
+      <NavLink
+        to="/p2p-transfer"
+        className={({ isActive }) => {
+          return `w-full text-base text-center font-nunito m-2.5
+
+${
+  isActive
+    ? "bg-cyan text-gray-300"
+    : "bg-gray-200 text-gray-100hover:text-cyan active:bg-cyan active:text-gray-300"
+}
+    border-0 cursor-pointer rounded capitalize font-semibold`;
+        }}
+      >
+        P2P Transfer
       </NavLink>
       
     </nav>

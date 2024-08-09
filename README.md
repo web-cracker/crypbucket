@@ -1,22 +1,44 @@
-# BTC to WBTC Converter
+# React Website Tutorial: ⭐Build Feature Rich Crypto Screener App with Tailwind CSS
 
-This React application allows users to convert Bitcoin (BTC) to Wrapped Bitcoin (WBTC). The app connects to MetaMask, displays the user's BTC balance, and allows them to input the amount of BTC they want to convert to WBTC.
+![GitHub stars](https://img.shields.io/github/stars/codebucks27/CryptoBucks-A-crypto-screener-application?style=social&logo=ApacheSpark&label=Stars)&nbsp;&nbsp;
+![GitHub forks](https://img.shields.io/github/forks/codebucks27/CryptoBucks-A-crypto-screener-application?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;
+![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />
 
-## Features
+This repository contains final code for Crypto Screener Application in ReactJS. <br />
 
-- Connects to MetaMask to fetch the user's BTC balance.
-- Converts BTC to WBTC based on the current conversion rate.
-- Allows the user to input a receiver address for the transaction.
+For Demo and Final Code checkout following link👇: <br />
+[Crypto Screener Application in ReactJS](https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css) <br />
 
-## Prerequisites
+Here are the starter code files👇: <br />
+https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application <br />
 
-- Node.js and npm (or yarn) installed on your machine.
-- MetaMask extension installed in your browser.
+If you want to learn how to create it please follow below tutorial👇: <br />
+[Build Crypto Screener Application in React JS](https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css)
+[![YouTube Video Views](https://img.shields.io/youtube/views/JPlVb3t6kx8?style=social)](https://youtu.be/cT160dOzpGY)<br />
 
-## Getting Started
+<h3 align="left">▶ Support me via:</h3><br />
+<p><a href="https://www.buymeacoffee.com/CodeBucks" target="_blank"> <img  src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" height="50" width="210" alt="CodeBucks" ></img></a></p><br />
 
-Follow these steps to set up and run the project locally:
+### Images of The Crypto Screener Website:
 
-1. **Clone the Repository**
-2. **npm i**
-3. **npm start**
+![Crypto](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Crypto.png)
+![Crypto-CryptoDetails](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Crypto-CryptoDetails.png)
+![Trending](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Trending.png)
+![Saved](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Saved.png)
+![Trending-Mobile](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Trending-Mobile.png)
+![Crypto-CryptoDetails-Mobile](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Crypto-CryptoDetails-Mobile.png)
+![Crypto-Mobile](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Crypto-Mobile.png)
+
+### Resources Used in This Project
+
+- Fonts from https://fonts.google.com/ <br />
+- Icons from https://iconify.design/ <br />
+- API from https://www.coingecko.com/en/api <br />
+
+### External Libraries used in this project:
+
+- [Tailwind css](https://tailwindcss.com/) <br />
+- [recharts](https://recharts.org/en-US/) <br />
+
+
+
