@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { ethers } from 'ethers';
+import axios from 'axios';
 
-const EthereumTransfer = () => {
+const BitcoinTransfer = () => {
+  const [senderAddress, setSenderAddress] = useState('');
+  const [privateKeyWIF, setPrivateKeyWIF] = useState('');
   const [recipientAddress, setRecipientAddress] = useState('');
   const [amount, setAmount] = useState('');
   const [transactionHash, setTransactionHash] = useState('');
@@ -12,57 +14,111 @@ const EthereumTransfer = () => {
     setError('');
 
     try {
-      // Check if MetaMask is installed
-      if (!window.ethereum) {
-        throw new Error('MetaMask is not installed');
-      }
+      // Function to fetch UTXOs
+      const fetchUTXOs = async (address) => {
+        const { data } = await axios.get(`https://api.blockcypher.com/v1/btc/test3/addrs/${address}?unspentOnly=true`);
+        return data.txrefs || [];
+      };
+      
 
-      // Request MetaMask account access
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
+      // Function to create the transaction
+      const createTransaction = async () => {
+        const tx = {
+          inputs: [],
+          outputs: [],
+        };
 
-      // Create an instance of ethers provider and signer
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
+        const utxos = await fetchUTXOs(senderAddress);
+        let totalAmountAvailable = 0;
+        const amountToSend = parseInt(amount, 10);
+        const fee = 500;
 
-      // Prepare the transaction details
-      const tx = {
-        to: recipientAddress,
-        value: ethers.utils.parseEther(amount), // Convert amount to wei
+        utxos.forEach(utxo => {
+          tx.inputs.push({
+            output: `${utxo.tx_hash}:${utxo.tx_output_n}`,
+            script: '', // You need to set the appropriate script here
+          });
+          totalAmountAvailable += utxo.value;
+        });
+
+        if (totalAmountAvailable < amountToSend + fee) {
+          throw new Error('Not enough balance to cover the amount and fee');
+        }
+
+        tx.outputs.push({
+          address: recipientAddress,
+          value: amountToSend,
+        });
+
+        const change = totalAmountAvailable - amountToSend - fee;
+        if (change > 0) {
+          tx.outputs.push({
+            address: senderAddress,
+            value: change,
+          });
+        }
+
+        // Sign and send the transaction here
+        // You will need to use the BlockCypher API to broadcast the transaction
+        return tx;
       };
 
-      // Send the transaction
-      const txResponse = await signer.sendTransaction(tx);
-      await txResponse.wait(); // Wait for the transaction to be mined
+      const rawTransaction = await createTransaction();
+      const broadcastTransaction = async (tx) => {
+        const { data } = await axios.post('https://api.blockcypher.com/v1/btc/test3/txs/push', {
+          tx: JSON.stringify(tx),
+        });
+        return data.tx.hash;
+      };
 
-      // Update state with the transaction hash
-      setTransactionHash(txResponse.hash);
+      const txHash = await broadcastTransaction(rawTransaction);
+      setTransactionHash(txHash);
     } catch (err) {
-      // Update state with error message
       setError(err.message);
     }
   };
 
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '16px' }}>
-      <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>Ethereum Transfer</h1>
+      <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>Bitcoin Testnet Transfer</h1>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <div>
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>Sender Address:</label>
+          <input
+            type="text"
+            value={senderAddress}
+            onChange={(e) => setSenderAddress(e.target.value)}
+            style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: '4px', color:'black'   }}
+            required
+          />
+        </div>
+        <div>
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>Sender Private Key (WIF):</label>
+          <input
+            type="text"
+            value={privateKeyWIF}
+            onChange={(e) => setPrivateKeyWIF(e.target.value)}
+            style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: '4px', color:'black' }}
+            required
+          />
+        </div>
         <div>
           <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>Recipient Address:</label>
           <input
             type="text"
             value={recipientAddress}
             onChange={(e) => setRecipientAddress(e.target.value)}
-            style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: '4px', color: 'black' }}
+            style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: '4px', color:'black' }}
             required
           />
         </div>
         <div>
-          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>Amount (ETH):</label>
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>Amount (satoshis):</label>
           <input
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: '4px', color: 'black' }}
+            style={{ width: '100%', padding: '8px', border: '1px solid #ddd', borderRadius: '4px', color:'black' }}
             required
           />
         </div>
@@ -70,13 +126,13 @@ const EthereumTransfer = () => {
           type="submit"
           style={{ width: '100%', backgroundColor: '#007BFF', color: '#fff', padding: '12px', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
         >
-          Send ETH
+          Send Bitcoin
         </button>
       </form>
       {transactionHash && (
         <div style={{ marginTop: '16px' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 'bold' }}>Transaction Successful</h2>
-          <p>Transaction Hash: <a href={`https://etherscan.io/tx/${transactionHash}`} target="_blank" rel="noopener noreferrer" style={{ color: '#007BFF' }}>{transactionHash}</a></p>
+          <p>Transaction Hash: <a href={`https://testnet.blockchain.info/tx/${transactionHash}`} target="_blank" rel="noopener noreferrer" style={{ color: '#007BFF' }}>{transactionHash}</a></p>
         </div>
       )}
       {error && (
@@ -89,4 +145,4 @@ const EthereumTransfer = () => {
   );
 };
 
-export default EthereumTransfer;
+export default BitcoinTransfer;

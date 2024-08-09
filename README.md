@@ -1,28 +1,44 @@
-# Seamless BTC to WBTC Swaps and P2P Exchange Platform
+# React Website Tutorial: ⭐Build Feature Rich Crypto Screener App with Tailwind CSS
 
-This project is a robust platform designed for seamless swapping between Bitcoin (BTC) and Wrapped Bitcoin (WBTC), along with peer-to-peer (P2P) transaction capabilities. The website provides users with a secure, efficient, and user-friendly interface to easily convert BTC to WBTC and vice versa. Additionally, the platform supports P2P transactions, enabling direct trading between users without intermediaries, ensuring privacy and control over their assets. The integration of these features offers a comprehensive solution for cryptocurrency enthusiasts looking for versatile and decentralized trading options.
+![GitHub stars](https://img.shields.io/github/stars/codebucks27/CryptoBucks-A-crypto-screener-application?style=social&logo=ApacheSpark&label=Stars)&nbsp;&nbsp;
+![GitHub forks](https://img.shields.io/github/forks/codebucks27/CryptoBucks-A-crypto-screener-application?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;
+![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />
 
-### Images of The Crypbucket Website:
+This repository contains final code for Crypto Screener Application in ReactJS. <br />
 
-### Crypto Home:
-![Crypto Home](https://github.com/user-attachments/assets/817aad99-bfe1-485d-9be2-2c19329dd2c3)
+For Demo and Final Code checkout following link👇: <br />
+[Crypto Screener Application in ReactJS](https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css) <br />
 
-### Metamask Connection:
-![Metamask Connection](https://github.com/user-attachments/assets/8b5fc484-b768-4f10-8f09-3cd16178b6c0)
+Here are the starter code files👇: <br />
+https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application <br />
 
-### Swapping:
-![Swapping](https://github.com/user-attachments/assets/fc92533a-3e0f-4090-8ef7-2512471ce262)
+If you want to learn how to create it please follow below tutorial👇: <br />
+[Build Crypto Screener Application in React JS](https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css)
+[![YouTube Video Views](https://img.shields.io/youtube/views/JPlVb3t6kx8?style=social)](https://youtu.be/cT160dOzpGY)<br />
 
-### BTC TO WBTC:
-![BTC TO WBTC](https://github.com/user-attachments/assets/d67d6ce1-8cbd-4d0a-a2ab-aafed4baa2e9)
+<h3 align="left">▶ Support me via:</h3><br />
+<p><a href="https://www.buymeacoffee.com/CodeBucks" target="_blank"> <img  src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" height="50" width="210" alt="CodeBucks" ></img></a></p><br />
 
-### P2P Transfer:
-![P2P Transfer](https://github.com/user-attachments/assets/ee10ebdf-5588-4100-b533-464c46e1809f)
+### Images of The Crypto Screener Website:
 
-### Crypto-CryptoDetails:
-![Crypto-CryptoDetails](https://github.com/user-attachments/assets/295faffb-591f-4387-8772-7399ce1af7b4)
+![Crypto](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Crypto.png)
+![Crypto-CryptoDetails](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Crypto-CryptoDetails.png)
+![Trending](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Trending.png)
+![Saved](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Saved.png)
+![Trending-Mobile](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Trending-Mobile.png)
+![Crypto-CryptoDetails-Mobile](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Crypto-CryptoDetails-Mobile.png)
+![Crypto-Mobile](https://github.com/codebucks27/CryptoBucks-A-crypto-screener-application/blob/main/Website-Images/Crypto-Mobile.png)
 
-### Trending:
-![Trending](https://github.com/user-attachments/assets/0f23c8cf-b51e-4bb0-a8d3-22aaf5dde7fe)
+### Resources Used in This Project
+
+- Fonts from https://fonts.google.com/ <br />
+- Icons from https://iconify.design/ <br />
+- API from https://www.coingecko.com/en/api <br />
+
+### External Libraries used in this project:
+
+- [Tailwind css](https://tailwindcss.com/) <br />
+- [recharts](https://recharts.org/en-US/) <br />
+
 
 
