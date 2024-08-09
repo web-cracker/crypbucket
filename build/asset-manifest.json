@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9bcd2ecd.css",
-    "main.js": "/static/js/main.2332b2a0.js",
+    "main.css": "/static/css/main.af88f8c3.css",
+    "main.js": "/static/js/main.5a308b7d.js",
     "static/media/bitcoin.png": "/static/media/bitcoin.da0d7a91bbb03504098b.png",
     "static/media/fraction.cjs": "/static/media/fraction.7992481f3d8339b77604.cjs",
     "static/media/submit-icon.svg": "/static/media/submit-icon.e4339f5525903ab6758211da17e848b7.svg",
@@ -10,11 +10,11 @@
     "index.html": "/index.html",
     "static/media/search-icon.svg": "/static/media/search-icon.2495c6465338e239b370150f484a8d8a.svg",
     "static/media/index.cjs": "/static/media/index.cd351d7c31d0d3fccf96.cjs",
-    "main.9bcd2ecd.css.map": "/static/css/main.9bcd2ecd.css.map",
-    "main.2332b2a0.js.map": "/static/js/main.2332b2a0.js.map"
+    "main.af88f8c3.css.map": "/static/css/main.af88f8c3.css.map",
+    "main.5a308b7d.js.map": "/static/js/main.5a308b7d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9bcd2ecd.css",
-    "static/js/main.2332b2a0.js"
+    "static/css/main.af88f8c3.css",
+    "static/js/main.5a308b7d.js"
   ]
 }
