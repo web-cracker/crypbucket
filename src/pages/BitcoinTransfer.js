@@ -79,8 +79,8 @@ const BitcoinTransfer = () => {
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '16px' }}>
-      <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>Bitcoin Testnet Transfer</h1>
+    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', border:'1px solid', width:700, marginTop:'2rem', borderRadius:'10px'}}>
+      <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>Bitcoin Transfer</h1>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <div>
           <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>Sender Address:</label>
