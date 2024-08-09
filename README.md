@@ -9,8 +9,6 @@ This project is a robust platform designed for seamless swapping between Bitcoin
 ### Metamask Connection:
 ![Metamask Connection](https://github.com/user-attachments/assets/8b5fc484-b768-4f10-8f09-3cd16178b6c0)
 
-![Metamask connected](https://github.com/user-attachments/assets/bc7bf1c5-d907-46d1-92e7-c846d8a3b682)
-
 ### Swapping:
 ![Swapping](https://github.com/user-attachments/assets/fc92533a-3e0f-4090-8ef7-2512471ce262)
 
